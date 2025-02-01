@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(12, 10, 20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#panel{
+    width: 80%;
+    height: 75%;
+    background-color: aliceblue;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid aliceblue;
+}
+#ptop{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(29, 37, 34);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid aliceblue;
+}
+.elem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 12px;
+    margin: 10%;
+}
+.elem h2{
+    color: aliceblue;
+}
+.box{
+    padding: 3px 5px;
+    height: 100%;
+    width: 30px;
+    background-color: aliceblue;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#pbtm{
+    width: 100%;
+    height: 352px;
+    background-color: rgb(29, 37, 34);
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+.bubble{
+    height: 45px;
+    width: 45px;
+    background-color: rgb(29, 37, 34);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    border: 1px solid aliceblue
+}
