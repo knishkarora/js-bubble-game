@@ -1,4 +1,4 @@
-var timer = 10;
+var timer = 60;
 var rn,hitrn;
 var score = 0;
 var timerInterval;
@@ -59,14 +59,16 @@ function gameover() {
     go.style.borderColor = "aliceblue";
     document.querySelector("#gotop").textContent = "Game Over";
     document.querySelector("#gobtm").innerHTML = '<button id="mybutton">Retry</button>';
+    document.querySelector("#gobtm1").innerHTML = `<h3>your score: ${score}</h3>`
     document.querySelector("#mybutton").addEventListener("click",()=>{
         restart();
     })
 }
 function restart() {
-    timer = 10;
+    timer = 60;
     score = 0;
     document.querySelector("#scoreval").textContent = 0;
+    document.querySelector("#gobtm1").innerHTML = "";
     document.querySelector("#gotop").textContent = "";
     document.querySelector("#gobtm").innerHTML = '';
     let gotop = document.querySelector("#gotop");
