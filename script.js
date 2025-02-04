@@ -1,6 +1,7 @@
-var timer = 60;
+var timer = 10;
 var rn,hitrn;
 var score = 0;
+var timerInterval;
 function makebubble() {
     var clutter = "";
     for (let index = 1; index <= 108; index++) {
@@ -10,13 +11,15 @@ function makebubble() {
     document.querySelector("#pbtm").innerHTML = clutter;
 }
 function runtimer() {
-    setInterval(() => {
-        if (timer>0) {
+    clearInterval(timerInterval); // Clear any existing interval
+    timerInterval = setInterval(() => {
+        if (timer > 0) {
             timer--;
             document.querySelector("#timerval").textContent = timer;
         } else {
             document.querySelector("#timerval").textContent = 0;
-            document.querySelector("#pbtm").innerHTML = "";
+            clearInterval(timerInterval); // Stop timer when game is over
+            gameover();
         }
     }, 1000);
 }
@@ -40,6 +43,50 @@ function scorechecker() {
         };    
     });
 };
+function gameover() {
+    gsap.to("#pbtmgo", {
+        width: "100%",
+        ease: Expo.easeInOut,
+        duration: .5
+    })
+    let gotop = document.querySelector("#gotop");
+    gotop.style.borderStyle = "solid";
+    gotop.style.borderWidth = "1px";
+    gotop.style.borderColor = "aliceblue";
+    let go = document.querySelector("#go");
+    go.style.borderStyle = "solid";
+    go.style.borderWidth = "1px";
+    go.style.borderColor = "aliceblue";
+    document.querySelector("#gotop").textContent = "Game Over";
+    document.querySelector("#gobtm").innerHTML = '<button id="mybutton">Retry</button>';
+    document.querySelector("#mybutton").addEventListener("click",()=>{
+        restart();
+    })
+}
+function restart() {
+    timer = 10;
+    score = 0;
+    document.querySelector("#scoreval").textContent = 0;
+    document.querySelector("#gotop").textContent = "";
+    document.querySelector("#gobtm").innerHTML = '';
+    let gotop = document.querySelector("#gotop");
+    gotop.style.borderStyle = "";
+    gotop.style.borderWidth = "";
+    gotop.style.borderColor = "";
+    let go = document.querySelector("#go");
+    go.style.borderStyle = "";
+    go.style.borderWidth = "";
+    go.style.borderColor = "";
+    gsap.to("#pbtmgo", {
+        width: "0",
+        ease: Expo.easeInOut,
+        duration: .5
+    })
+    runtimer();
+    hitbubble();
+    makebubble();
+    scorechecker();
+}
 makebubble();
 runtimer();
 hitbubble();

@@ -55,15 +55,60 @@ html, body{
     justify-content: center;
 
 }
-#pbtm{
+#mainbtm{
     width: 100%;
     height: 352px;
+    position: relative;
+}
+#pbtm{
+    width: 100%;
+    height: 100%;
     background-color: rgb(29, 37, 34);
     padding: 8px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: space-between;
+    position: absolute;
+    z-index: 10 ;
+}
+#pbtmgo{
+    width: 0; /* 0 se 100 animate karna hai */ 
+    height: 100%;
+    background-color: rgb(29, 37, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1000;
+}
+#go{
+    height: 200px;
+    width: 500px;
+    /* border: 1px solid aliceblue; */
+    border-radius: 3px;
+    
+}
+#gotop{
+    color: aliceblue;
+    width: 100%;
+    height: 50px;
+    /* border: 1px solid aliceblue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#gobtm{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#gobtm button{
+    width: 70px;
+    height: 35px;
+    font-size: 20px;
 }
 .bubble{
     height: 45px;
@@ -75,4 +120,9 @@ html, body{
     justify-content: center;
     color: aliceblue;
     border: 1px solid aliceblue
+}
+#gameover{
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
 }
